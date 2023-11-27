@@ -1,0 +1,19 @@
+<!-- control_led.html en tus plantillas Django -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control LED</title>
+</head>
+<body>
+    <h1>Control LED</h1>
+    <form action="{% url 'encender_led' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Encender LED">
+    </form>
+    <form action="{% url 'apagar_led' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Apagar LED">
+    </form>
+    <a href="{% url 'salir' %}">Cerrar Sesión</a>
+</body>
+</html>
